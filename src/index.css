@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: black;
+  color: white;
+  letter-spacing: 0.02em;
+}
+
+::selection {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.prose {
+  @apply prose-headings:text-white/90 prose-p:text-white/80 prose-a:text-blue-400 prose-strong:text-white/90;
+}
+.vf-chat-input {
+  background-color: #fff !important; /* White background */
+  color: #000 !important; /* Black text */
+  border: 1px solid #ccc !important; /* Standard border */
+}
