@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import ScrollAnimation from './ScrollAnimation'; // Adjust the path as necessary
 import AnimatedText from './AnimatedText'; // Import the AnimatedText component
 

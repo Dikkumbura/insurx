@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InsurX - AI Solutions for Insurance Industry</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="module" crossorigin src="/assets/index-b46b4e5e.js"></script>
+    <link rel="stylesheet" href="/assets/index-d7c7c5a2.css">
+  </head>
+  <body>
+    <script>
+      const FormExtension = {
+        name: 'Forms',
+        type: 'response',
+        match: ({ trace }) =>
+          trace.type === 'Custom_Form' || trace.payload?.name === 'Custom_Form',
+    
+        render: ({ trace, element }) => {
+          // Create the form container
+          const formContainer = document.createElement('form');
+    
+          // Set up the inner HTML of the form: fields relevant to an auto insurance quote
+          formContainer.innerHTML = `${trace.payload?.html}`;
+          
+          eval(trace.payload?.validation);
+          // Finally, attach the form to the webchat container
+          element.appendChild(formContainer);
+        },
+      };
+    </script>
+    
+    <script type="text/javascript">
+      (function(d, t) {
+          var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+          v.onload = function() {
+            window.voiceflow.chat.load({
+              verify: { projectID: '67b89df40a8e6bf8eb89ae99' },
+              url: 'https://general-runtime.voiceflow.com',
+              versionID: 'production', 
+              assistant: {
+                extensions: [FormExtension]
+              },
+              voice: { 
+                url: "https://runtime-api.voiceflow.com" 
+              }
+            });
+    
+            // Apply CSS fix dynamically after chat loads
+            let style = document.createElement('style');
+            style.innerHTML = `
+              .vf-chat-input {
+                background-color: #fff !important;  
+                color: #000 !important;             
+                border: 1px solid #ccc !important;  
+              }
+              html, body {
+                color-scheme: light !important;
+              }
+            `;
+            document.head.appendChild(style);
+          }
+          v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+      })(document, 'script');
+    </script>
+    
+    <div id="root"></div>
+    
+  </body>
+</html>

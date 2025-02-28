@@ -405,14 +405,15 @@ const BlogPost = () => {
     }
 
     gsap.utils.toArray('.animate-text').forEach((element) => {
-      gsap.fromTo(element, 
+      gsap.fromTo(
+        element as HTMLElement,
         { opacity: 0, y: 50 }, 
         {
           opacity: 1, 
           y: 0, 
           duration: 1.5, 
           scrollTrigger: {
-            trigger: element,
+            trigger: element as HTMLElement,
             start: 'top 80%',
             scrub: true
           }
