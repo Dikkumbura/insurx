@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Canvas } from '@react-three/fiber';
 import { Environment } from '@react-three/drei';
 import { AINetwork } from './AINetwork';
+import { ResponsiveCamera } from './ResponsiveCamera';
 
 export const ServicesHero = () => {
   const containerVariants = {
@@ -33,6 +34,7 @@ export const ServicesHero = () => {
     <div className="h-screen relative overflow-hidden">
       <div className="absolute inset-0 z-10">
         <Canvas camera={{ position: [0, 0, 10], fov: 45 }}>
+          <ResponsiveCamera />
           <Environment preset="city" />
           <ambientLight intensity={0.7} />
           <pointLight position={[10, 10, 10]} intensity={1.2} />

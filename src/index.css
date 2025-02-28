@@ -28,3 +28,12 @@ body {
   color: #000 !important; /* Black text */
   border: 1px solid #ccc !important; /* Standard border */
 }
+
+html, body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+canvas {
+  touch-action: pan-y;
+}

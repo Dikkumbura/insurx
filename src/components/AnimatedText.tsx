@@ -14,17 +14,18 @@ const AnimatedText = ({ children, className }: AnimatedTextProps) => {
 
   useEffect(() => {
     if (textRef.current) {
+      const isMobile = window.innerWidth < 768;
       gsap.fromTo(
         textRef.current,
-        { opacity: 0, y: 50 },
+        { opacity: 0, y: isMobile ? 20 : 50 },
         {
           opacity: 1,
           y: 0,
-          duration: 1.5,
+          duration: isMobile ? 0.8 : 1.5,
           scrollTrigger: {
             trigger: textRef.current,
-            start: 'top 80%',
-            end: 'top 50%',
+            start: 'top 90%',
+            end: 'top 60%',
             scrub: true,
           },
         }

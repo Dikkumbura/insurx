@@ -127,6 +127,8 @@ export const Blogs = () => {
                     <div className="aspect-video overflow-hidden">
                       <motion.img
                         src={post.image}
+                        srcSet={`${post.image}&w=400 400w, ${post.image}&w=800 800w`}
+                        sizes="(max-width: 768px) 100vw, 50vw"
                         alt={post.title}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       />
