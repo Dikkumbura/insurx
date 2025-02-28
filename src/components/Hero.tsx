@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { Canvas } from '@react-three/fiber';
 import { IridescentRing } from './IridescentRing';
 import { Environment } from '@react-three/drei';
-import { Link } from 'react-router-dom';
 import AnimatedText from './AnimatedText';
 import { useEffect } from 'react';
 import { observeElements } from '../utils/intersectionObserver';
